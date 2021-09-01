@@ -52,7 +52,7 @@ class FullBody extends Component {
         let rows = [];
         while (week < 53) {
             console.log("Iterating Through " + week);
-            payable = payable + this.state.BiWeeklyIncome;
+            payable = this.round(payable + this.state.BiWeeklyIncome);
             const standardCutOffTilNow = this.round(week * this.state.WeeklyCutOff);
             const higherTaxPayable = this.round(payable - standardCutOffTilNow);
             const lowerTax = this.round(standardCutOffTilNow * .2);
